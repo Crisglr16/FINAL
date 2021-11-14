@@ -1,0 +1,28 @@
+﻿@model ModuloConsultas.Models.BodegaModel
+
+<h1>Bodega</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Productos">
+            <div class="form-group">
+                <label asp-for="CodigoProveedor" class="control-label"></label>
+                <input asp-for="CodigoProveedor" class="form-control" />
+                <span asp-validation-for="CodigoProveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaIngreso" class="control-label"></label>
+                <input asp-for="FechaIngreso" class="form-control" />
+                <span asp-validation-for="FechaIngreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExistenciaProducto" class="control-label"></label>
+                <input asp-for="ExistenciaProducto" class="form-control" />
+                <span asp-validation-for="ExistenciaProducto" class="text-danger"></span>
+            </div>
+        </form>
+    </div>
+    <a asp-action="Index">Regresar</a>
+</div>
+

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ModuloConsultas.Models.ProveedorModel>
+
+@{
+    ViewData["Title"] = "Consulta Proveedores";
+}
+<h1>Proveedores</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoProveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreProveedor)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Nit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dirección)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prod in Model)
+        {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => prod.CodigoProveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => prod.NombreProveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => prod.Dirección)
+            </td>
+            <td>
+                <a asp-action="ConsuProveedores" asp-route-id="@prod.CodigoProveedor" class="btn btn-dark">Consultar</a>
+            </td>
+            <td>
+                <a asp-action="ActuProveedor" asp-route-id="@prod.CodigoProveedor" class="btn btn-warning">Actualizar</a>
+            </td>
+            <td>
+                <a asp-action="BorrarProveedor" asp-route-id="@prod.CodigoProveedor" class="btn btn-danger">Borrar</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,40 @@
+﻿@model ModuloConsultas.Models.ProveedorModel
+@{
+    ViewData["title"] = "Actualizar Proveedor";
+}
+
+<div class="text-center">
+    <h1>ACTUALIZAR PROVEEDOR</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <form asp-action="ActualizarProducto">
+            <input type="hidden" asp-for="CodigoProveedor" />
+
+            <div class="form-group">
+                <label asp-for="NombreProveedor" class="control-label"></label>
+                <input asp-for="NombreProveedor" class="form-control" />
+                <span asp-validation-for="NombreProveedor" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Nit" class="control-label"></label>
+                <input asp-for="Nit" class="form-control" />
+                <span asp-validation-for="Nit" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Dirección" class="control-label"></label>
+                <input asp-for="Dirección" class="form-control" />
+                <span asp-validation-for="Dirección" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ACTUALIZAR" class="btn btn-success" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<a asp-action="Index">Regresar</a>

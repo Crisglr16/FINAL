@@ -1,0 +1,36 @@
+﻿@model ModuloConsultas.Models.ProveedorModel
+
+<h1>Consulta Proveedores</h1>
+<hr />
+
+<dl class="row">
+
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.CodigoProveedor);
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.CodigoProveedor);
+    </dd>
+
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.NombreProveedor);
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.NombreProveedor);
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Nit);
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Nit);
+    </dd>
+
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Dirección);
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Dirección);
+    </dd>
+</dl>
+
+<a asp-action="Index">Regresar</a>

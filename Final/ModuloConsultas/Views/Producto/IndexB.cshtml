@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ModuloConsultas.Models.BodegaModel>
+
+@{
+    ViewData["Title"] = "Bodega";
+}
+<h1>Proveedores</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoSalida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoProveedor)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.FechaIngreso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExistenciaProducto)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prod in Model)
+        {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => prod.CodigoSalida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => prod.CodigoProveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => prod.FechaIngreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => prod.ExistenciaProducto)
+            </td>
+            <td>
+                <a asp-action="ConsuBodega" asp-route-id="@prod.CodigoSalida" class="btn btn-dark">Consultar</a>
+            </td>
+            <td>
+                <a asp-action="ActuBodega" asp-route-id="@prod.CodigoSalida" class="btn btn-warning">Actualizar</a>
+            </td>
+            <td>
+                <a asp-action="BorrarBodega" asp-route-id="@prod.CodigoSalida" class="btn btn-danger">Borrar</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

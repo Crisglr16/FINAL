@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ModuloConsultas.Models.ProductoModel>
+
+@{
+    ViewData["Title"] = "Consulta Productos";
+}
+<h1>Bodega</h1>
+<p>
+    <a asp-action="Productos"> Nuevo Producto</a>
+</p>
+<p>
+    <a asp-action="Proveedores"> Proveedores</a>
+</p>
+<p>
+    <a asp-action="Bodega"> Bodega</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaIngreso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaVencimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoProveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreProveedor)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var prod in Model)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => prod.NombreProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => prod.CantidadProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => prod.FechaIngreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => prod.FechaVencimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => prod.CodigoProveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => prod.NombreProveedor)
+            </td>
+            <td>
+                <a asp-action="ConsultaProducto" asp-route-id="@prod.CodigoProducto" class="btn btn-dark">Consultar</a>
+            </td>
+            <td>
+                <a asp-action="ActualizarProducto" asp-route-id="@prod.CodigoProducto" class="btn btn-warning">Actualizar</a>
+            </td>
+            <td>
+                <a asp-action="BorrarProducto" asp-route-id="@prod.CodigoProducto" class="btn btn-danger">Borrar</a>
+            </td>
+        </tr>
+            }
+    </tbody>
+</table>
